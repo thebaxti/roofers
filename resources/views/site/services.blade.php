@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app-site')
 @section('content')
     <div class="boxed_wrapper ltr">
 
@@ -23,7 +23,7 @@
         <!-- switcher menu -->
         <div class="switcher">
             <div class="switch_btn">
-                <button><img src="assets/images/icon/color-palette.png" alt="Color Palette"> </button>
+                <button><img src="{{ asset('assets/images/icon/color-palette.png') }}" alt="Color Palette"> </button>
             </div>
             <div class="switch_menu">
                 <!-- color changer -->
@@ -65,7 +65,7 @@
                         <div class="sidebar-info-contents">
                             <div class="content-inner">
                                 <div class="logo">
-                                    <a href="index.blade.php"><img src="assets/images/resources/logo-2.png" alt="" /></a>
+                                    <a href="{{ route('index') }}"><img src="{{ asset('assets/images/resources/logo-2.png') }}" alt="" /></a>
                                 </div>
                                 <div class="content-box">
                                     <h4>About Us</h4>
@@ -79,12 +79,13 @@
 
                                 <div class="form-inner">
                                     <h4>Get a free quote</h4>
-                                    <form action="index.blade.php" method="post">
+                                    <form action="{{ route('contact.send') }}" method="post">
+                                        @csrf
                                         <div class="form-group">
-                                            <input type="text" name="name" placeholder="Name" required="">
+                                            <input type="text" name="name" placeholder="Name" required="required">
                                         </div>
                                         <div class="form-group">
-                                            <input type="email" name="email" placeholder="Email" required="">
+                                            <input type="email" name="email" placeholder="Email" required="required">
                                         </div>
                                         <div class="form-group">
                                             <textarea name="message" placeholder="Message..."></textarea>
@@ -105,11 +106,11 @@
                                         </li>
                                         <li>
                                             <span class="flaticon-telephone"></span>
-                                            <a href="tel:+8801682648101">+88 01682648101</a>
+                                            <a href="tel:+998999957665">+998 9957665</a>
                                         </li>
                                         <li>
                                             <span class="flaticon-mail"></span>
-                                            <a href="mailto:info@example.com">info@example.com</a>
+                                            <a href="https://:info@example.com">info@example.com</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -139,7 +140,7 @@
 
         <!--Start breadcrumb area paroller-->
         <section class="breadcrumb-area">
-            <div class="breadcrumb-area-bg" style="background-image: url(assets/images/breadcrumb/breadcrumb-1.jpg);">
+            <div class="breadcrumb-area-bg" style="background-image: url({{ asset('assets/images/breadcrumb/breadcrumb-1.jpg') }});">
             </div>
             <div class="container">
                 <div class="row">
@@ -151,7 +152,7 @@
                             <div class="breadcrumb-menu" data-aos="fade-up" data-aos-easing="linear"
                                 data-aos-duration="1500">
                                 <ul>
-                                    <li><a href="index.blade.php">Home</a></li>
+                                    <li><a href="{{ route('index') }}">Home</a></li>
                                     <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
                                     <li class="active">Our Services</li>
                                 </ul>
@@ -178,20 +179,20 @@
                         <div class="single-service-style1">
                             <div class="inner-box">
                                 <div class="img-holder">
-                                    <img src="assets/images/services/service-v1-1.jpg" alt="">
+                                    <img src="{{ asset('assets/images/services/service-v1-1.jpg') }}" alt="">
                                 </div>
                                 <div class="title-holder">
                                     <div class="pattern-bg"
-                                        style="background-image: url(assets/images/pattern/thm-pattern-1.png);"></div>
+                                        style="background-image: url({{ asset('assets/images/pattern/thm-pattern-1.png') }});"></div>
                                     <div class="inner-text">
                                         <h6>Service 01</h6>
-                                        <h3><a href="services-details.html">Single Ply Roofing</a></h3>
+                                        <h3><a href="{{ route('services') }}">Single Ply Roofing</a></h3>
                                         <div class="text">
                                             <p>Except too obtains some of advantages us ever...</p>
                                         </div>
                                     </div>
                                     <div class="button-box">
-                                        <a href="services-details.html">More Details</a>
+                                        <a href="{{ route('services') }}">More Details</a>
                                     </div>
                                     <div class="icon">
                                         <span class="flaticon-roof"></span>
@@ -206,20 +207,20 @@
                         <div class="single-service-style1">
                             <div class="inner-box">
                                 <div class="img-holder">
-                                    <img src="assets/images/services/service-v1-2.jpg" alt="">
+                                    <img src="{{ asset('assets/images/services/service-v1-2.jpg') }}" alt="">
                                 </div>
                                 <div class="title-holder">
                                     <div class="pattern-bg"
-                                        style="background-image: url(assets/images/pattern/thm-pattern-1.png);"></div>
+                                        style="background-image: url({{ asset('assets/images/pattern/thm-pattern-1.png') }});"></div>
                                     <div class="inner-text">
                                         <h6>Service 02</h6>
-                                        <h3><a href="services-details.html">Modified Roofing</a></h3>
+                                        <h3><a href="{{ route('services') }}">Modified Roofing</a></h3>
                                         <div class="text">
                                             <p>Except too obtains some of advantages us ever...</p>
                                         </div>
                                     </div>
                                     <div class="button-box">
-                                        <a href="services-details.html">More Details</a>
+                                        <a href="{{ route('services') }}">More Details</a>
                                     </div>
                                     <div class="icon">
                                         <span class="flaticon-roof-1"></span>
@@ -234,20 +235,20 @@
                         <div class="single-service-style1">
                             <div class="inner-box">
                                 <div class="img-holder">
-                                    <img src="assets/images/services/service-v1-3.jpg" alt="">
+                                    <img src="{{ asset('assets/images/services/service-v1-3.jpg') }}" alt="">
                                 </div>
                                 <div class="title-holder">
                                     <div class="pattern-bg"
-                                        style="background-image: url(assets/images/pattern/thm-pattern-1.png);"></div>
+                                        style="background-image: url({{ asset('assets/images/pattern/thm-pattern-1.png') }});"></div>
                                     <div class="inner-text">
                                         <h6>Service 03</h6>
-                                        <h3><a href="services-details.html">Built-Up Roofing</a></h3>
+                                        <h3><a href="{{ route('services') }}">Built-Up Roofing</a></h3>
                                         <div class="text">
                                             <p>Except too obtains some of advantages us ever...</p>
                                         </div>
                                     </div>
                                     <div class="button-box">
-                                        <a href="services-details.html">More Details</a>
+                                        <a href="{{ route('services') }}">More Details</a>
                                     </div>
                                     <div class="icon">
                                         <span class="flaticon-roof-2"></span>
@@ -263,20 +264,20 @@
                         <div class="single-service-style1">
                             <div class="inner-box">
                                 <div class="img-holder">
-                                    <img src="assets/images/services/service-v1-4.jpg" alt="">
+                                    <img src="{{ asset('assets/images/services/service-v1-4.jpg') }}" alt="">
                                 </div>
                                 <div class="title-holder">
                                     <div class="pattern-bg"
-                                        style="background-image: url(assets/images/pattern/thm-pattern-1.png);"></div>
+                                        style="background-image: url({{ asset('assets/images/pattern/thm-pattern-1.png') }});"></div>
                                     <div class="inner-text">
                                         <h6>Service 04</h6>
-                                        <h3><a href="services-details.html">Metal Roofing</a></h3>
+                                        <h3><a href="{{ route('services') }}">Metal Roofing</a></h3>
                                         <div class="text">
                                             <p>Except too obtains some of advantages us ever...</p>
                                         </div>
                                     </div>
                                     <div class="button-box">
-                                        <a href="services-details.html">More Details</a>
+                                        <a href="{{ asset('services') }}">More Details</a>
                                     </div>
                                     <div class="icon">
                                         <span class="flaticon-roof-3"></span>
@@ -291,20 +292,20 @@
                         <div class="single-service-style1">
                             <div class="inner-box">
                                 <div class="img-holder">
-                                    <img src="assets/images/services/service-v1-5.jpg" alt="">
+                                    <img src="{{ asset('assets/images/services/service-v1-5.jpg') }}" alt="">
                                 </div>
                                 <div class="title-holder">
                                     <div class="pattern-bg"
-                                        style="background-image: url(assets/images/pattern/thm-pattern-1.png);"></div>
+                                        style="background-image: url({{ asset('assets/images/pattern/thm-pattern-1.png') }});"></div>
                                     <div class="inner-text">
                                         <h6>Service 05</h6>
-                                        <h3><a href="services-details.html">Vegetative Roofing</a></h3>
+                                        <h3><a href="{{ route('services') }}">Vegetative Roofing</a></h3>
                                         <div class="text">
                                             <p>Except too obtains some of advantages us ever...</p>
                                         </div>
                                     </div>
                                     <div class="button-box">
-                                        <a href="services-details.html">More Details</a>
+                                        <a href="{{ route('services') }}">More Details</a>
                                     </div>
                                     <div class="icon">
                                         <span class="flaticon-store"></span>
@@ -319,20 +320,20 @@
                         <div class="single-service-style1">
                             <div class="inner-box">
                                 <div class="img-holder">
-                                    <img src="assets/images/services/service-v1-6.jpg" alt="">
+                                    <img src="{{ asset('assets/images/services/service-v1-6.jpg') }}" alt="">
                                 </div>
                                 <div class="title-holder">
                                     <div class="pattern-bg"
-                                        style="background-image: url(assets/images/pattern/thm-pattern-1.png);"></div>
+                                        style="background-image: url({{ asset('assets/images/pattern/thm-pattern-1.png') }});"></div>
                                     <div class="inner-text">
                                         <h6>Service 06</h6>
-                                        <h3><a href="services-details.html">Speciality Roofing</a></h3>
+                                        <h3><a href="{{ route('services') }}">Speciality Roofing</a></h3>
                                         <div class="text">
                                             <p>Except too obtains some of advantages us ever...</p>
                                         </div>
                                     </div>
                                     <div class="button-box">
-                                        <a href="services-details.html">More Details</a>
+                                        <a href="{{ route('services') }}">More Details</a>
                                     </div>
                                     <div class="icon">
                                         <span class="flaticon-roof-4"></span>
@@ -361,7 +362,7 @@
             <div class="popup-inner">
                 <div class="overlay-layer"></div>
                 <div class="search-form">
-                    <form method="post" action="index.blade.php">
+                    <form method="post" action="{{ route('index') }}">
                         <div class="form-group">
                             <fieldset>
                                 <input type="search" class="form-control" name="search-input" value=""
@@ -372,11 +373,11 @@
                     </form>
                     <h3>Recent Search Keywords</h3>
                     <ul class="recent-searches">
-                        <li><a href="index.blade.php">Safety Tips</a></li>
-                        <li><a href="index.blade.php">Filteration</a></li>
-                        <li><a href="index.blade.php">Accessories</a></li>
-                        <li><a href="index.blade.php">Tools</a></li>
-                        <li><a href="index.blade.php">Design</a></li>
+                        <li><a href="{{ route('index') }}">Safety Tips</a></li>
+                        <li><a href="{{ route('index') }}">Filteration</a></li>
+                        <li><a href="{{ route('index') }}">Accessories</a></li>
+                        <li><a href="{{ route('index') }}">Tools</a></li>
+                        <li><a href="{{ route('index') }}">Design</a></li>
                     </ul>
                 </div>
             </div>

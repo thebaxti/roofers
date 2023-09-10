@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app-site')
 @section('content')
     <div class="boxed_wrapper ltr">
 
@@ -27,7 +27,7 @@
         <!-- switcher menu -->
         <div class="switcher">
             <div class="switch_btn">
-                <button><img src="assets/images/icon/color-palette.png" alt="Color Palette"></button>
+                <button><img src="{{ asset('assets/images/icon/color-palette.png') }}" alt="Color Palette"></button>
             </div>
             <div class="switch_menu">
                 <!-- color changer -->
@@ -69,7 +69,7 @@
                         <div class="sidebar-info-contents">
                             <div class="content-inner">
                                 <div class="logo">
-                                    <a href="index.blade.php"><img src="assets/images/resources/logo-2.png" alt=""/></a>
+                                    <a href="{{ route('index') }}"><img src="{{ asset('assets/images/resources/logo-2.png') }}" alt=""/></a>
                                 </div>
 
                                 <div class="content-box">
@@ -84,12 +84,13 @@
 
                                 <div class="form-inner">
                                     <h4>Get a free quote</h4>
-                                    <form action="index.blade.php" method="post">
+                                    <form action="{{ route('contact.send') }}" method="post">
+                                        @csrf
                                         <div class="form-group">
-                                            <input type="text" name="name" placeholder="Name" required="">
+                                            <input type="text" name="name" placeholder="Name" required="required">
                                         </div>
                                         <div class="form-group">
-                                            <input type="email" name="email" placeholder="Email" required="">
+                                            <input type="email" name="email" placeholder="Email" required="required">
                                         </div>
                                         <div class="form-group">
                                             <textarea name="message" placeholder="Message..."></textarea>
@@ -110,11 +111,11 @@
                                         </li>
                                         <li>
                                             <span class="flaticon-telephone"></span>
-                                            <a href="tel:+8801682648101">+88 01682648101</a>
+                                            <a href="tel:+8801682648101">+998 99 995 76 65</a>
                                         </li>
                                         <li>
                                             <span class="flaticon-mail"></span>
-                                            <a href="mailto:info@example.com">info@example.com</a>
+                                            <a href="https://info@gmail.com">info@gmail.com</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -145,7 +146,7 @@
 
         <!--Start breadcrumb area paroller-->
         <section class="breadcrumb-area">
-            <div class="breadcrumb-area-bg" style="background-image: url(assets/images/breadcrumb/breadcrumb-1.jpg);">
+            <div class="breadcrumb-area-bg" style="background-image: url({{ asset('assets/images/breadcrumb/breadcrumb-1.jpg') }});">
             </div>
             <div class="container">
                 <div class="row">
@@ -220,7 +221,7 @@
                                 </ul>
                                 <div class="authorised-person-info">
                                     <div class="signature">
-                                        <img src="assets/images/resources/signature.png" alt="">
+                                        <img src="{{ asset('assets/images/resources/signature.png') }}" alt="">
                                     </div>
                                     <div class="name">
                                         <h3>Benjamin Everett.</h3>
@@ -236,11 +237,11 @@
                         <div class="about-style2__image-box">
                             <div class="big-title paroller">rufers</div>
                             <div class="img-box1 js-tilt">
-                                <img src="assets/images/about/about-style2-img-1.jpg" alt="">
+                                <img src="{{ asset('assets/images/about/about-style2-img-1.jpg') }}" alt="">
                             </div>
                             <div class="img-box2">
                                 <div class="inner">
-                                    <img src="assets/images/about/about-style2-img-2.jpg" alt="">
+                                    <img src="{{ asset('assets/images/about/about-style2-img-2.jpg') }}" alt="">
                                 </div>
                             </div>
 
@@ -263,12 +264,12 @@
         <!--Start Statements Area-->
         <section class="statements-area">
             <div class="statements-area-bg"
-                 style="background-image: url(assets/images/parallax-background/statements-area-bg.jpg);"></div>
+                 style="background-image: url({{ asset('assets/images/parallax-background/statements-area-bg.jpg') }});"></div>
             <div class="container">
                 <div class="row">
                     <div class="col-xl-5">
                         <div class="video-holder-box-style2"
-                             style="background-image: url(assets/images/resources/video-gallery-bg-2.jpg);">
+                             style="background-image: url({{ asset('assets/images/resources/video-gallery-bg-2.jpg') }});">
                             <div class="icon wow zoomIn animated" data-wow-delay="300ms" data-wow-duration="1500ms">
                                 <a class="video-popup" title="Video Gallery"
                                    href="https://www.youtube.com/watch?v=p25gICT63ek">
@@ -353,7 +354,7 @@
         <!--Start history area -->
         <section class="our-history">
             <div class="our-history-area-bg"
-                 style="background-image: url(assets/images/parallax-background/our-history-area-bg.jpg);"></div>
+                 style="background-image: url({{ asset('assets/images/parallax-background/our-history-area-bg.jpg') }});"></div>
             <div class="container">
                 <div class="sec-title">
                     <div class="sub-title">
@@ -445,7 +446,7 @@
                                     <h3>Safety & Reliability</h3>
                                     <p>Except to obtain some advantage it but who has any right to find.</p>
                                     <div class="btn-box">
-                                        <a class="btn-two" href="services-details.html">More Details</a>
+                                        <a class="btn-two" href="{{ route('services') }}">More Details</a>
                                     </div>
                                 </div>
                             </div>
@@ -462,7 +463,7 @@
                                     <h3>Quality Materials</h3>
                                     <p>Except to obtain some advantage it but who has any right to find.</p>
                                     <div class="btn-box">
-                                        <a class="btn-two" href="services-details.html">More Details</a>
+                                        <a class="btn-two" href="{{ route('services') }}">More Details</a>
                                     </div>
                                 </div>
                             </div>
@@ -479,7 +480,7 @@
                                     <h3>Professional Team</h3>
                                     <p>Foresee the pain trouble that bounds ensue and equaly blame.</p>
                                     <div class="btn-box">
-                                        <a class="btn-two" href="services-details.html">More Details</a>
+                                        <a class="btn-two" href="{{ route('services') }}">More Details</a>
                                     </div>
                                 </div>
                             </div>
@@ -497,7 +498,7 @@
                                     <h3>Quick Response</h3>
                                     <p>Foresee the pain trouble that bounds ensue and equaly blame.</p>
                                     <div class="btn-box">
-                                        <a class="btn-two" href="services-details.html">More Details</a>
+                                        <a class="btn-two" href="{{ route('services') }}">More Details</a>
                                     </div>
                                 </div>
                             </div>
@@ -514,7 +515,7 @@
                                     <h3>Fully Insured</h3>
                                     <p>Except to obtain some advantage it but who has any right to find.</p>
                                     <div class="btn-box">
-                                        <a class="btn-two" href="services-details.html">More Details</a>
+                                        <a class="btn-two" href="{{ route('services') }}">More Details</a>
                                     </div>
                                 </div>
                             </div>
@@ -531,7 +532,7 @@
                                     <h3>Guarantee Service</h3>
                                     <p>Except to obtain some advantage it but who has any right to find.</p>
                                     <div class="btn-box">
-                                        <a class="btn-two" href="services-details.html">More Details</a>
+                                        <a class="btn-two" href="{{ route('services') }}">More Details</a>
                                     </div>
                                 </div>
                             </div>
@@ -546,7 +547,7 @@
 
         <!--Start Team Style1 Area-->
         <section class="team-style1-area team-style1-area--style2 about-page">
-            <div class="pattern-bg" style="background-image: url(assets/images/pattern/thm-pattern-4.png);"></div>
+            <div class="pattern-bg" style="background-image: url({{ asset('assets/images/pattern/thm-pattern-4.png') }});"></div>
             <div class="container">
                 <div class="team-style1__top-title-box">
                     <div class="sec-title">
@@ -556,7 +557,7 @@
                         <h2>Meet Our Expert Team</h2>
                     </div>
                     <div class="team-style1__button-box">
-                        <a class="btn-one" href="team.html">
+                        <a class="btn-one" href="#">
                             <span class="txt">All Experts</span>
                         </a>
                     </div>
@@ -569,12 +570,12 @@
                              data-wow-duration="1500ms">
                             <div class="img-holder">
                                 <div class="inner">
-                                    <img src="assets/images/team/team-v1-1.jpg" alt=""/>
+                                    <img src="{{ asset('assets/images/team/team-v1-1.jpg') }}" alt=""/>
                                     <div class="overlay-bg"></div>
                                 </div>
                             </div>
                             <div class="title-holder">
-                                <h3><a href="team-single.html">Max Benjamin</a></h3>
+                                <h3><a href="#">Max Benjamin</a></h3>
                                 <p>Founder</p>
                                 <div class="social-link-box">
                                     <ul class="team-social-link">
@@ -599,12 +600,12 @@
                              data-wow-duration="1500ms">
                             <div class="img-holder">
                                 <div class="inner">
-                                    <img src="assets/images/team/team-v1-2.jpg" alt=""/>
+                                    <img src="{{ asset('assets/images/team/team-v1-2.jpg') }}" alt=""/>
                                     <div class="overlay-bg"></div>
                                 </div>
                             </div>
                             <div class="title-holder">
-                                <h3><a href="team-single.html">Harley Reuban</a></h3>
+                                <h3><a href="#">Harley Reuban</a></h3>
                                 <p>Manager</p>
                                 <div class="social-link-box">
                                     <ul class="team-social-link">
@@ -629,12 +630,12 @@
                              data-wow-duration="1500ms">
                             <div class="img-holder">
                                 <div class="inner">
-                                    <img src="assets/images/team/team-v1-3.jpg" alt=""/>
+                                    <img src="{{ asset('assets/images/team/team-v1-3.jpg') }}" alt=""/>
                                     <div class="overlay-bg"></div>
                                 </div>
                             </div>
                             <div class="title-holder">
-                                <h3><a href="team-single.html">Luke Stanley</a></h3>
+                                <h3><a href="#">Luke Stanley</a></h3>
                                 <p>Executive</p>
                                 <div class="social-link-box">
                                     <ul class="team-social-link">
@@ -659,12 +660,12 @@
                              data-wow-duration="1500ms">
                             <div class="img-holder">
                                 <div class="inner">
-                                    <img src="assets/images/team/team-v1-4.jpg" alt=""/>
+                                    <img src="{{ asset('assets/images/team/team-v1-4.jpg') }}" alt=""/>
                                     <div class="overlay-bg"></div>
                                 </div>
                             </div>
                             <div class="title-holder">
-                                <h3><a href="team-single.html">Ariana Melody</a></h3>
+                                <h3><a href="#">Ariana Melody</a></h3>
                                 <p>Executive</p>
                                 <div class="social-link-box">
                                     <ul class="team-social-link">
@@ -707,10 +708,10 @@
                             <!--Start Single Certificates Box-->
                             <div class="single-certificates-box text-center">
                                 <div class="pattern-bg"
-                                     style="background-image: url(assets/images/pattern/thm-pattern-3.png);"></div>
+                                     style="background-image: url({{ asset('assets/images/pattern/thm-pattern-3.png') }});"></div>
                                 <div class="img-box">
                                     <div class="inner">
-                                        <img src="assets/images/resources/certificates-1.jpg" alt="">
+                                        <img src="{{ asset('assets/images/resources/certificates-1.jpg') }}" alt="">
                                     </div>
                                 </div>
                                 <div class="text-holder">
@@ -721,10 +722,10 @@
                             <!--Start Single Certificates Box-->
                             <div class="single-certificates-box text-center">
                                 <div class="pattern-bg"
-                                     style="background-image: url(assets/images/pattern/thm-pattern-3.png);"></div>
+                                     style="background-image: url({{ asset('assets/images/pattern/thm-pattern-3.png') }});"></div>
                                 <div class="img-box">
                                     <div class="inner">
-                                        <img src="assets/images/resources/certificates-2.jpg" alt="">
+                                        <img src="{{ asset('assets/images/resources/certificates-2.jpg') }}" alt="">
                                     </div>
                                 </div>
                                 <div class="text-holder">
@@ -735,10 +736,10 @@
                             <!--Start Single Certificates Box-->
                             <div class="single-certificates-box text-center">
                                 <div class="pattern-bg"
-                                     style="background-image: url(assets/images/pattern/thm-pattern-3.png);"></div>
+                                     style="background-image: url({{ asset('assets/images/pattern/thm-pattern-3.png') }});"></div>
                                 <div class="img-box">
                                     <div class="inner">
-                                        <img src="assets/images/resources/certificates-3.jpg" alt="">
+                                        <img src="{{ asset('assets/images/resources/certificates-3.jpg') }}" alt="">
                                     </div>
                                 </div>
                                 <div class="text-holder">
@@ -749,10 +750,10 @@
                             <!--Start Single Certificates Box-->
                             <div class="single-certificates-box text-center">
                                 <div class="pattern-bg"
-                                     style="background-image: url(assets/images/pattern/thm-pattern-3.png);"></div>
+                                     style="background-image: url({{ asset('assets/images/pattern/thm-pattern-3.png') }});"></div>
                                 <div class="img-box">
                                     <div class="inner">
-                                        <img src="assets/images/resources/certificates-1.jpg" alt="">
+                                        <img src="{{ asset('assets/images/resources/certificates-1.jpg') }}" alt="">
                                     </div>
                                 </div>
                                 <div class="text-holder">
@@ -764,10 +765,10 @@
                             <!--Start Single Certificates Box-->
                             <div class="single-certificates-box text-center">
                                 <div class="pattern-bg"
-                                     style="background-image: url(assets/images/pattern/thm-pattern-3.png);"></div>
+                                     style="background-image: url({{ asset('assets/images/pattern/thm-pattern-3.png') }});"></div>
                                 <div class="img-box">
                                     <div class="inner">
-                                        <img src="assets/images/resources/certificates-1.jpg" alt="">
+                                        <img src="{{ asset('assets/images/resources/certificates-1.jpg') }}" alt="">
                                     </div>
                                 </div>
                                 <div class="text-holder">
@@ -778,10 +779,10 @@
                             <!--Start Single Certificates Box-->
                             <div class="single-certificates-box text-center">
                                 <div class="pattern-bg"
-                                     style="background-image: url(assets/images/pattern/thm-pattern-3.png);"></div>
+                                     style="background-image: url({{ asset('assets/images/pattern/thm-pattern-3.png') }});"></div>
                                 <div class="img-box">
                                     <div class="inner">
-                                        <img src="assets/images/resources/certificates-2.jpg" alt="">
+                                        <img src="{{ asset('assets/images/resources/certificates-2.jpg') }}" alt="">
                                     </div>
                                 </div>
                                 <div class="text-holder">
@@ -792,10 +793,10 @@
                             <!--Start Single Certificates Box-->
                             <div class="single-certificates-box text-center">
                                 <div class="pattern-bg"
-                                     style="background-image: url(assets/images/pattern/thm-pattern-3.png);"></div>
+                                     style="background-image: url({{ asset('assets/images/pattern/thm-pattern-3.png') }});"></div>
                                 <div class="img-box">
                                     <div class="inner">
-                                        <img src="assets/images/resources/certificates-3.jpg" alt="">
+                                        <img src="{{ asset('assets/images/resources/certificates-3.jpg') }}" alt="">
                                     </div>
                                 </div>
                                 <div class="text-holder">
@@ -806,10 +807,10 @@
                             <!--Start Single Certificates Box-->
                             <div class="single-certificates-box text-center">
                                 <div class="pattern-bg"
-                                     style="background-image: url(assets/images/pattern/thm-pattern-3.png);"></div>
+                                     style="background-image: url({{ asset('assets/images/pattern/thm-pattern-3.png') }});"></div>
                                 <div class="img-box">
                                     <div class="inner">
-                                        <img src="assets/images/resources/certificates-1.jpg" alt="">
+                                        <img src="{{ asset('assets/images/resources/certificates-1.jpg') }}" alt="">
                                     </div>
                                 </div>
                                 <div class="text-holder">
@@ -821,10 +822,10 @@
                             <!--Start Single Certificates Box-->
                             <div class="single-certificates-box text-center">
                                 <div class="pattern-bg"
-                                     style="background-image: url(assets/images/pattern/thm-pattern-3.png);"></div>
+                                     style="background-image: url({{ asset('assets/images/pattern/thm-pattern-3.png') }});"></div>
                                 <div class="img-box">
                                     <div class="inner">
-                                        <img src="assets/images/resources/certificates-1.jpg" alt="">
+                                        <img src="{{ asset('assets/images/resources/certificates-1.jpg') }}" alt="">
                                     </div>
                                 </div>
                                 <div class="text-holder">
@@ -835,10 +836,10 @@
                             <!--Start Single Certificates Box-->
                             <div class="single-certificates-box text-center">
                                 <div class="pattern-bg"
-                                     style="background-image: url(assets/images/pattern/thm-pattern-3.png);"></div>
+                                     style="background-image: url({{ asset('assets/images/pattern/thm-pattern-3.png') }});"></div>
                                 <div class="img-box">
                                     <div class="inner">
-                                        <img src="assets/images/resources/certificates-2.jpg" alt="">
+                                        <img src="{{ asset('assets/images/resources/certificates-2.jpg') }}" alt="">
                                     </div>
                                 </div>
                                 <div class="text-holder">
@@ -849,10 +850,10 @@
                             <!--Start Single Certificates Box-->
                             <div class="single-certificates-box text-center">
                                 <div class="pattern-bg"
-                                     style="background-image: url(assets/images/pattern/thm-pattern-3.png);"></div>
+                                     style="background-image: url({{ asset('assets/images/pattern/thm-pattern-3.png') }});"></div>
                                 <div class="img-box">
                                     <div class="inner">
-                                        <img src="assets/images/resources/certificates-3.jpg" alt="">
+                                        <img src="{{ asset('assets/images/resources/certificates-3.jpg') }}" alt="">
                                     </div>
                                 </div>
                                 <div class="text-holder">
@@ -863,10 +864,10 @@
                             <!--Start Single Certificates Box-->
                             <div class="single-certificates-box text-center">
                                 <div class="pattern-bg"
-                                     style="background-image: url(assets/images/pattern/thm-pattern-3.png);"></div>
+                                     style="background-image: url({{ asset('assets/images/pattern/thm-pattern-3.png') }});"></div>
                                 <div class="img-box">
                                     <div class="inner">
-                                        <img src="assets/images/resources/certificates-1.jpg" alt="">
+                                        <img src="{{ asset('assets/images/resources/certificates-1.jpg') }}" alt="">
                                     </div>
                                 </div>
                                 <div class="text-holder">
@@ -887,27 +888,27 @@
                 <ul class="partner-box partner-carousel owl-carousel owl-theme owl-dot-style1">
                     <!--Start Single Partner Logo Box-->
                     <li class="single-partner-logo-box">
-                        <a href="#"><img src="assets/images/brand/brand-logo-v2-1.png" alt="Awesome Image"></a>
+                        <a href="#"><img src="{{ asset('assets/images/brand/brand-logo-v2-1.png') }}" alt="Awesome Image"></a>
                     </li>
                     <!--End Single Partner Logo Box-->
                     <!--Start Single Partner Logo Box-->
                     <li class="single-partner-logo-box">
-                        <a href="#"><img src="assets/images/brand/brand-logo-v2-2.png" alt="Awesome Image"></a>
+                        <a href="#"><img src="{{ asset('assets/images/brand/brand-logo-v2-2.png') }}" alt="Awesome Image"></a>
                     </li>
                     <!--End Single Partner Logo Box-->
                     <!--Start Single Partner Logo Box-->
                     <li class="single-partner-logo-box">
-                        <a href="#"><img src="assets/images/brand/brand-logo-v2-3.png" alt="Awesome Image"></a>
+                        <a href="#"><img src="{{ asset('assets/images/brand/brand-logo-v2-3.png') }}" alt="Awesome Image"></a>
                     </li>
                     <!--End Single Partner Logo Box-->
                     <!--Start Single Partner Logo Box-->
                     <li class="single-partner-logo-box">
-                        <a href="#"><img src="assets/images/brand/brand-logo-v2-4.png" alt="Awesome Image"></a>
+                        <a href="#"><img src="{{ asset('assets/images/brand/brand-logo-v2-4.png') }}" alt="Awesome Image"></a>
                     </li>
                     <!--End Single Partner Logo Box-->
                     <!--Start Single Partner Logo Box-->
                     <li class="single-partner-logo-box">
-                        <a href="#"><img src="assets/images/brand/brand-logo-v2-5.png" alt="Awesome Image"></a>
+                        <a href="#"><img src="{{ asset('assets/images/brand/brand-logo-v2-5.png') }}" alt="Awesome Image"></a>
                     </li>
                     <!--End Single Partner Logo Box-->
                 </ul>
@@ -926,7 +927,7 @@
             <div class="popup-inner">
                 <div class="overlay-layer"></div>
                 <div class="search-form">
-                    <form method="post" action="index.blade.php">
+                    <form method="post" action="{{ route('index') }}">
                         <div class="form-group">
                             <fieldset>
                                 <input type="search" class="form-control" name="search-input" value=""
@@ -937,11 +938,11 @@
                     </form>
                     <h3>Recent Search Keywords</h3>
                     <ul class="recent-searches">
-                        <li><a href="index.blade.php">Safety Tips</a></li>
-                        <li><a href="index.blade.php">Filteration</a></li>
-                        <li><a href="index.blade.php">Accessories</a></li>
-                        <li><a href="index.blade.php">Tools</a></li>
-                        <li><a href="index.blade.php">Design</a></li>
+                        <li><a href="{{ route('index') }}">Safety Tips</a></li>
+                        <li><a href="{{ route('index') }}">Filteration</a></li>
+                        <li><a href="{{ route('index') }}">Accessories</a></li>
+                        <li><a href="{{ route('index') }}">Tools</a></li>
+                        <li><a href="{{ route('index') }}">Design</a></li>
                     </ul>
                 </div>
             </div>

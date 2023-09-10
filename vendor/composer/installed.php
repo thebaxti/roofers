@@ -1,8 +1,8 @@
 <?php return array(
     'root' => array(
         'name' => 'laravel/laravel',
-        'pretty_version' => 'v8.6.12',
-        'version' => '8.6.12.0',
+        'pretty_version' => '1.0.0+no-version-set',
+        'version' => '1.0.0.0',
         'reference' => NULL,
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
@@ -379,11 +379,29 @@
                 0 => 'v8.83.27',
             ),
         ),
+        'irazasyed/telegram-bot-sdk' => array(
+            'pretty_version' => 'v3.9',
+            'version' => '3.9.0.0',
+            'reference' => 'c4c8250e334e94aab7b6b4a67850e39fd5a9384b',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../irazasyed/telegram-bot-sdk',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'kodova/hamcrest-php' => array(
             'dev_requirement' => true,
             'replaced' => array(
                 0 => '*',
             ),
+        ),
+        'laravel/breeze' => array(
+            'pretty_version' => 'v1.9.4',
+            'version' => '1.9.4.0',
+            'reference' => '98c79a68ae53c2193367238c019a2f988be44f4f',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../laravel/breeze',
+            'aliases' => array(),
+            'dev_requirement' => true,
         ),
         'laravel/framework' => array(
             'pretty_version' => 'v8.83.27',
@@ -395,8 +413,8 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => 'v8.6.12',
-            'version' => '8.6.12.0',
+            'pretty_version' => '1.0.0+no-version-set',
+            'version' => '1.0.0.0',
             'reference' => NULL,
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
@@ -457,6 +475,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'league/event' => array(
+            'pretty_version' => '2.2.0',
+            'version' => '2.2.0.0',
+            'reference' => 'd2cc124cf9a3fab2bb4ff963307f60361ce4d119',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../league/event',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'league/flysystem' => array(
             'pretty_version' => '1.1.10',
             'version' => '1.1.10.0',
@@ -472,6 +499,15 @@
             'reference' => 'a6dfb1194a2946fcdc1f38219445234f65b35c96',
             'type' => 'library',
             'install_path' => __DIR__ . '/../league/mime-type-detection',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'mcamara/laravel-localization' => array(
+            'pretty_version' => 'V1.8.0',
+            'version' => '1.8.0.0',
+            'reference' => '9b1779a963c1779d1977d8ad0558a681608e3ec1',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../mcamara/laravel-localization',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -745,8 +781,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0',
-                1 => '1.0.0 || 2.0.0 || 3.0.0',
+                0 => '1.0.0 || 2.0.0 || 3.0.0',
+                1 => '1.0|2.0',
             ),
         ),
         'psr/simple-cache' => array(
@@ -797,6 +833,15 @@
             'reference' => 'fc9bb7fb5388691fd7373cd44dcb4d63bbcf24df',
             'type' => 'library',
             'install_path' => __DIR__ . '/../ramsey/uuid',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'realrashid/sweet-alert' => array(
+            'pretty_version' => 'v7.1.0',
+            'version' => '7.1.0.0',
+            'reference' => '769f951053cd3363fd7fb7a1dd30f9828b619b44',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../realrashid/sweet-alert',
             'aliases' => array(),
             'dev_requirement' => false,
         ),

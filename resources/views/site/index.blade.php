@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app-site')
 @section('content')
 <div class="boxed_wrapper ltr">
 
@@ -27,7 +27,7 @@
     <!-- switcher menu -->
     <div class="switcher">
         <div class="switch_btn">
-            <button><img src="assets/images/icon/color-palette.png" alt="Color Palette"></button>
+            <button><img src="{{ asset('assets/images/icon/color-palette.png') }}" alt="Color Palette"></button>
         </div>
         <div class="switch_menu">
             <!-- color changer -->
@@ -69,7 +69,7 @@
                     <div class="sidebar-info-contents">
                         <div class="content-inner">
                             <div class="logo">
-                                <a href="index.html"><img src="assets/images/resources/logo-2.png" alt=""/></a>
+                                <a href="{{ route('index') }}"><img src="{{ asset('assets/images/resources/logo-2.png') }}" alt=""/></a>
                             </div>
                             <div class="content-box">
                                 <h4>About Us</h4>
@@ -83,12 +83,13 @@
 
                             <div class="form-inner">
                                 <h4>Get a free quote</h4>
-                                <form action="index.html" method="post">
+                                <form action="{{ route('contact.send') }}" method="post">
+                                    @csrf
                                     <div class="form-group">
-                                        <input type="text" name="name" placeholder="Name" required="">
+                                        <input type="text" name="name" placeholder="Name" required="required">
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" name="email" placeholder="Email" required="">
+                                        <input type="email" name="email" placeholder="Email" required="required">
                                     </div>
                                     <div class="form-group">
                                         <textarea name="message" placeholder="Message..."></textarea>
@@ -109,11 +110,11 @@
                                     </li>
                                     <li>
                                         <span class="flaticon-telephone"></span>
-                                        <a href="tel:+8801682648101">+88 01682648101</a>
+                                        <a href="tel:+998999957665">+998 995 76 65</a>
                                     </li>
                                     <li>
                                         <span class="flaticon-mail"></span>
-                                        <a href="mailto:info@example.com">info@example.com</a>
+                                        <a href="https://info@gmail.com">info@gmail.com</a>
                                     </li>
                                 </ul>
                             </div>
@@ -149,7 +150,7 @@
             <div class="banner-carousel owl-theme owl-carousel">
                 <!-- Slide -->
                 <div class="slide">
-                    <div class="image-layer" style="background-image:url(assets/images/slides/slide-v1-1.jpg)">
+                    <div class="image-layer" style="background-image:url({{ asset('assets/images/slides/slide-v1-1.jpg') }})">
                     </div>
                     <div class="auto-container">
                         <div class="content">
@@ -161,7 +162,7 @@
                                     Roofing & Retro-Fit.</p>
                             </div>
                             <div class="btns-box">
-                                <a class="btn-one" href="about.blade.php">
+                                <a class="btn-one" href="{{ route('about') }}">
                                     <span class="txt">Read More</span>
                                 </a>
                             </div>
@@ -170,7 +171,7 @@
                 </div>
                 <!-- Slide -->
                 <div class="slide">
-                    <div class="image-layer" style="background-image:url(assets/images/slides/slide-v1-2.jpg)">
+                    <div class="image-layer" style="background-image:url({{ asset('assets/images/slides/slide-v1-2.jpg') }})">
                     </div>
                     <div class="auto-container">
                         <div class="content">
@@ -182,7 +183,7 @@
                                     Roofing & Retro-Fit.</p>
                             </div>
                             <div class="btns-box">
-                                <a class="btn-one" href="about.blade.php">
+                                <a class="btn-one" href="{{ route('about') }}">
                                     <span class="txt">Read More</span>
                                 </a>
                             </div>
@@ -191,7 +192,7 @@
                 </div>
                 <!-- Slide -->
                 <div class="slide">
-                    <div class="image-layer" style="background-image:url(assets/images/slides/slide-v1-3.jpg)">
+                    <div class="image-layer" style="background-image:url({{ asset('assets/images/slides/slide-v1-3.jpg') }})">
                     </div>
                     <div class="auto-container">
                         <div class="content">
@@ -203,7 +204,7 @@
                                     Roofing & Retro-Fit.</p>
                             </div>
                             <div class="btns-box">
-                                <a class="btn-one" href="about.blade.php">
+                                <a class="btn-one" href="{{ route('about') }}">
                                     <span class="txt">Read More</span>
                                 </a>
                             </div>
@@ -220,7 +221,7 @@
 
     <!--Start Service Style1 Area-->
     <section class="service-style1-area">
-        <div class="pattern-bg" style="background-image: url(assets/images/pattern/thm-pattern-2.png);"></div>
+        <div class="pattern-bg" style="background-image: url({{ asset('assets/images/pattern/thm-pattern-2.png') }});"></div>
         <div class="container">
             <div class="sec-title center text-center">
                 <div class="sub-title">
@@ -234,20 +235,20 @@
                     <div class="single-service-style1">
                         <div class="inner-box">
                             <div class="img-holder">
-                                <img src="assets/images/services/service-v1-1.jpg" alt="">
+                                <img src="{{ asset('assets/images/services/service-v1-1.jpg') }}" alt="">
                             </div>
                             <div class="title-holder">
                                 <div class="pattern-bg"
-                                     style="background-image: url(assets/images/pattern/thm-pattern-1.png);"></div>
+                                     style="background-image: url({{ asset('assets/images/pattern/thm-pattern-1.png') }});"></div>
                                 <div class="inner-text">
                                     <h6>Service 01</h6>
-                                    <h3><a href="services-details.html">Single Ply Roofing</a></h3>
+                                    <h3><a href="{{ route('services') }}">Single Ply Roofing</a></h3>
                                     <div class="text">
                                         <p>Except too obtains some of advantages us ever...</p>
                                     </div>
                                 </div>
                                 <div class="button-box">
-                                    <a href="services-details.html">More Details</a>
+                                    <a href="{{ route('services') }}">More Details</a>
                                 </div>
                                 <div class="icon">
                                     <span class="flaticon-roof"></span>
@@ -262,20 +263,20 @@
                     <div class="single-service-style1">
                         <div class="inner-box">
                             <div class="img-holder">
-                                <img src="assets/images/services/service-v1-2.jpg" alt="">
+                                <img src="{{ asset('assets/images/services/service-v1-2.jpg') }}" alt="">
                             </div>
                             <div class="title-holder">
                                 <div class="pattern-bg"
-                                     style="background-image: url(assets/images/pattern/thm-pattern-1.png);"></div>
+                                     style="background-image: url({{ asset('assets/images/pattern/thm-pattern-1.png') }});"></div>
                                 <div class="inner-text">
                                     <h6>Service 02</h6>
-                                    <h3><a href="services-details.html">Modified Roofing</a></h3>
+                                    <h3><a href="{{ route('services') }}">Modified Roofing</a></h3>
                                     <div class="text">
                                         <p>Except too obtains some of advantages us ever...</p>
                                     </div>
                                 </div>
                                 <div class="button-box">
-                                    <a href="services-details.html">More Details</a>
+                                    <a href="{{ route('services') }}">More Details</a>
                                 </div>
                                 <div class="icon">
                                     <span class="flaticon-roof-1"></span>
@@ -290,20 +291,20 @@
                     <div class="single-service-style1">
                         <div class="inner-box">
                             <div class="img-holder">
-                                <img src="assets/images/services/service-v1-3.jpg" alt="">
+                                <img src="{{ asset('assets/images/services/service-v1-3.jpg') }}" alt="">
                             </div>
                             <div class="title-holder">
                                 <div class="pattern-bg"
-                                     style="background-image: url(assets/images/pattern/thm-pattern-1.png);"></div>
+                                     style="background-image: url({{ asset('assets/images/pattern/thm-pattern-1.png') }});"></div>
                                 <div class="inner-text">
                                     <h6>Service 03</h6>
-                                    <h3><a href="services-details.html">Built-Up Roofing</a></h3>
+                                    <h3><a href="{{ route('services') }}">Built-Up Roofing</a></h3>
                                     <div class="text">
                                         <p>Except too obtains some of advantages us ever...</p>
                                     </div>
                                 </div>
                                 <div class="button-box">
-                                    <a href="services-details.html">More Details</a>
+                                    <a href="{{ route('services') }}">More Details</a>
                                 </div>
                                 <div class="icon">
                                     <span class="flaticon-roof-2"></span>
@@ -320,7 +321,7 @@
                     <div class="service-style1__bottom-text">
                         <h3>Providing Roofing & Weather proofing Peace Of Mind, Start Here.</h3>
                         <div class="btns-box">
-                            <a class="btn-one style2" href="contact.blade.php">
+                            <a class="btn-one style2" href="{{ route('contact') }}">
                                 <span class="txt">All Services</span>
                             </a>
                         </div>
@@ -339,11 +340,11 @@
                 <div class="col-xl-6">
                     <div class="about-style1__image1 martop0">
                         <div class="inner">
-                            <img src="assets/images/about/about-style1.jpg" alt="">
+                            <img src="{{ asset('assets/images/about/about-style1.jpg') }}" alt="">
                         </div>
                         <div class="overlay-box">
                             <div class="bg-image"
-                                 style="background-image: url(assets/images/about/about-style1.jpg);"></div>
+                                 style="background-image: url({{ asset('assets/images/about/about-style1.jpg') }});"></div>
                             <div class="left">
                                 <h2>12</h2>
                             </div>
@@ -353,7 +354,7 @@
                         </div>
                         <div class="round-box">
                             <div class="image-bg"
-                                 style="background-image: url(assets/images/about/about-style1.jpg);"></div>
+                                 style="background-image: url({{ asset('assets/images/about/about-style1.jpg') }});"></div>
                         </div>
                         <div class="arrow-box">
                             <div class="dot-top"></div>
@@ -405,7 +406,7 @@
 
     <!--Start Features Style1 Area-->
     <section class="features-style1-area">
-        <div class="pattern-bg" style="background-image: url(assets/images/pattern/thm-pattern-4.png);"></div>
+        <div class="pattern-bg" style="background-image: url({{ asset('assets/images/pattern/thm-pattern-4.png') }});"></div>
         <div class="container features-box">
             <div class="row">
                 <!--Start Single Features Style1-->
@@ -413,7 +414,7 @@
                      data-wow-duration="1500ms">
                     <div class="single-features-style1 first-child text-center">
                         <div class="single-features-style1__bg"
-                             style="background-image: url(assets/images/resources/features-1.jpg);"></div>
+                             style="background-image: url({{ asset('assets/images/resources/features-1.jpg') }});"></div>
                         <div class="counting-box"></div>
                         <div class="inner">
                             <div class="static-content">
@@ -428,7 +429,7 @@
                             </div>
                         </div>
                         <div class="button-box">
-                            <a href="services-details.html"><span class="fa fa-angle-right"></span>Details</a>
+                            <a href="{{ route('services') }}"><span class="fa fa-angle-right"></span>Details</a>
                         </div>
                     </div>
                 </div>
@@ -438,7 +439,7 @@
                      data-wow-duration="1500ms">
                     <div class="single-features-style1 text-center">
                         <div class="single-features-style1__bg"
-                             style="background-image: url(assets/images/resources/features-1.jpg);"></div>
+                             style="background-image: url({{ asset('assets/images/resources/features-1.jpg') }});"></div>
                         <div class="counting-box"></div>
                         <div class="inner">
                             <div class="static-content">
@@ -453,7 +454,7 @@
                             </div>
                         </div>
                         <div class="button-box">
-                            <a href="services-details.html"><span class="fa fa-angle-right"></span>Details</a>
+                            <a href="{{ route('services') }}"><span class="fa fa-angle-right"></span>Details</a>
                         </div>
                     </div>
                 </div>
@@ -463,7 +464,7 @@
                      data-wow-duration="1500ms">
                     <div class="single-features-style1 bordernone text-center">
                         <div class="single-features-style1__bg"
-                             style="background-image: url(assets/images/resources/features-1.jpg);"></div>
+                             style="background-image: url({{ asset('assets/images/resources/features-1.jpg') }});"></div>
                         <div class="counting-box"></div>
                         <div class="inner">
                             <div class="static-content">
@@ -478,7 +479,7 @@
                             </div>
                         </div>
                         <div class="button-box">
-                            <a href="services-details.html"><span class="fa fa-angle-right"></span>Details</a>
+                            <a href="{{ route('services') }}"><span class="fa fa-angle-right"></span>Details</a>
                         </div>
                     </div>
                 </div>
@@ -488,7 +489,7 @@
                      data-wow-duration="1500ms">
                     <div class="single-features-style1 text-center">
                         <div class="single-features-style1__bg"
-                             style="background-image: url(assets/images/resources/features-1.jpg);"></div>
+                             style="background-image: url({{ asset('assets/images/resources/features-1.jpg') }});"></div>
                         <div class="counting-box"></div>
                         <div class="inner">
                             <div class="static-content">
@@ -503,7 +504,7 @@
                             </div>
                         </div>
                         <div class="button-box">
-                            <a href="services-details.html"><span class="fa fa-angle-right"></span>Details</a>
+                            <a href="{{ route('services') }}"><span class="fa fa-angle-right"></span>Details</a>
                         </div>
                     </div>
                 </div>
@@ -528,7 +529,7 @@
                              data-wow-duration="1500ms">
                             <div class="inner">
                                 <div class="pattern-bg"
-                                     style="background-image: url(assets/images/pattern/thm-pattern-3.png);"></div>
+                                     style="background-image: url({{ asset('assets/images/pattern/thm-pattern-3.png') }});"></div>
                                 <div class="icon">
                                     <span class="flaticon-roof-3"></span>
                                 </div>
@@ -549,7 +550,7 @@
                              data-wow-duration="1500ms">
                             <div class="inner">
                                 <div class="pattern-bg"
-                                     style="background-image: url(assets/images/pattern/thm-pattern-3.png);"></div>
+                                     style="background-image: url({{ asset('assets/images/pattern/thm-pattern-3.png') }});"></div>
                                 <div class="icon">
                                     <span class="flaticon-worker"></span>
                                 </div>
@@ -569,7 +570,7 @@
                              data-wow-duration="1500ms">
                             <div class="inner">
                                 <div class="pattern-bg"
-                                     style="background-image: url(assets/images/pattern/thm-pattern-3.png);"></div>
+                                     style="background-image: url({{ asset('assets/images/pattern/thm-pattern-3.png') }});"></div>
                                 <div class="icon">
                                     <span class="flaticon-award"></span>
                                 </div>
@@ -590,7 +591,7 @@
                              data-wow-duration="1500ms">
                             <div class="inner">
                                 <div class="pattern-bg"
-                                     style="background-image: url(assets/images/pattern/thm-pattern-3.png);"></div>
+                                     style="background-image: url({{ asset('assets/images/pattern/thm-pattern-3.png') }});"></div>
                                 <div class="icon">
                                     <span class="flaticon-happy"></span>
                                 </div>
@@ -624,7 +625,7 @@
                     <h2>Recently Completed Works</h2>
                 </div>
                 <div class="project-style1__button">
-                    <a class="btn-one" href="projects.html">
+                    <a class="btn-one" href="#">
                         <span class="txt">All Projects</span>
                     </a>
                 </div>
@@ -637,7 +638,7 @@
                     <div class="single-project-item">
                         <div class="img-holder">
                             <div class="inner">
-                                <img src="assets/images/portfolio/project-v1-1.jpg" alt="Awesome Image">
+                                <img src="{{ asset('assets/images/portfolio/project-v1-1.jpg') }}" alt="Awesome Image">
                             </div>
                             <div class="overlay-content text-center">
                                 <p>Commercial</p>
@@ -646,7 +647,7 @@
                                 <ul>
                                     <li>
                                         <a class="lightbox-image" data-fancybox="gallery"
-                                           href="assets/images/portfolio/project-v1-1.jpg">
+                                           href="{{{ asset('assets/images/portfolio/project-v1-1.jpg') }}}">
                                             <i class="flaticon-zoom"></i>
                                         </a>
                                     </li>
@@ -662,7 +663,7 @@
                     <div class="single-project-item">
                         <div class="img-holder">
                             <div class="inner">
-                                <img src="assets/images/portfolio/project-v1-2.jpg" alt="Awesome Image">
+                                <img src="{{ asset('assets/images/portfolio/project-v1-2.jpg') }}" alt="Awesome Image">
                             </div>
                             <div class="overlay-content text-center">
                                 <p>Commercial</p>
@@ -671,7 +672,7 @@
                                 <ul>
                                     <li>
                                         <a class="lightbox-image" data-fancybox="gallery"
-                                           href="assets/images/portfolio/project-v1-2.jpg">
+                                           href="{{ asset('assets/images/portfolio/project-v1-2.jpg') }}">
                                             <i class="flaticon-zoom"></i>
                                         </a>
                                     </li>
@@ -687,7 +688,7 @@
                     <div class="single-project-item min_height300">
                         <div class="img-holder">
                             <div class="inner">
-                                <img src="assets/images/portfolio/project-v1-3.jpg" alt="Awesome Image">
+                                <img src="{{ asset('assets/images/portfolio/project-v1-3.jpg') }}" alt="Awesome Image">
                             </div>
                             <div class="overlay-content text-center">
                                 <p>Commercial</p>
@@ -696,7 +697,7 @@
                                 <ul>
                                     <li>
                                         <a class="lightbox-image" data-fancybox="gallery"
-                                           href="assets/images/portfolio/project-v1-3.jpg">
+                                           href="{{ asset('assets/images/portfolio/project-v1-3.jpg') }}">
                                             <i class="flaticon-zoom"></i>
                                         </a>
                                     </li>
@@ -713,7 +714,7 @@
                     <div class="single-project-item min_height300">
                         <div class="img-holder">
                             <div class="inner">
-                                <img src="assets/images/portfolio/project-v1-4.jpg" alt="Awesome Image">
+                                <img src="{{ asset('assets/images/portfolio/project-v1-4.jpg') }}" alt="Awesome Image">
                             </div>
                             <div class="overlay-content text-center">
                                 <p>Commercial</p>
@@ -722,7 +723,7 @@
                                 <ul>
                                     <li>
                                         <a class="lightbox-image" data-fancybox="gallery"
-                                           href="assets/images/portfolio/project-v1-4.jpg">
+                                           href="{{ asset('assets/images/portfolio/project-v1-4.jpg') }}">
                                             <i class="flaticon-zoom"></i>
                                         </a>
                                     </li>
@@ -738,7 +739,7 @@
                     <div class="single-project-item">
                         <div class="img-holder">
                             <div class="inner">
-                                <img src="assets/images/portfolio/project-v1-5.jpg" alt="Awesome Image">
+                                <img src="{{ asset('assets/images/portfolio/project-v1-5.jpg') }}" alt="Awesome Image">
                             </div>
                             <div class="overlay-content text-center">
                                 <p>Commercial</p>
@@ -747,7 +748,7 @@
                                 <ul>
                                     <li>
                                         <a class="lightbox-image" data-fancybox="gallery"
-                                           href="assets/images/portfolio/project-v1-5.jpg">
+                                           href="{{ asset('assets/images/portfolio/project-v1-5.jpg') }}">
                                             <i class="flaticon-zoom"></i>
                                         </a>
                                     </li>
@@ -763,7 +764,7 @@
                     <div class="single-project-item">
                         <div class="img-holder">
                             <div class="inner">
-                                <img src="assets/images/portfolio/project-v1-6.jpg" alt="Awesome Image">
+                                <img src="{{ asset('assets/images/portfolio/project-v1-6.jpg') }}" alt="Awesome Image">
                             </div>
                             <div class="overlay-content text-center">
                                 <p>Commercial</p>
@@ -772,7 +773,7 @@
                                 <ul>
                                     <li>
                                         <a class="lightbox-image" data-fancybox="gallery"
-                                           href="assets/images/portfolio/project-v1-6.jpg">
+                                           href="{{ asset('assets/images/portfolio/project-v1-6.jpg') }}">
                                             <i class="flaticon-zoom"></i>
                                         </a>
                                     </li>
@@ -792,10 +793,10 @@
     <!--Start Video Gallery Style1 Area-->
     <section class="video-gallery-style1-area">
         <div class="video-gallery-style1-area__bg"
-             style="background-image: url(assets/images/resources/video-gallery-bg.jpg);"></div>
-        <div class="pattern-bg" style="background-image: url(assets/images/pattern/thm-pattern-5.png);"></div>
-        <div class="pattern-bg-2" style="background-image: url(assets/images/pattern/thm-pattern-5.png);"></div>
-        <div class="pattern-bg-3" style="background-image: url(assets/images/pattern/thm-pattern-5.png);"></div>
+             style="background-image: url({{ asset('assets/images/resources/video-gallery-bg.jpg') }});"></div>
+        <div class="pattern-bg" style="background-image: url({{ asset('assets/images/pattern/thm-pattern-5.png') }});"></div>
+        <div class="pattern-bg-2" style="background-image: url({{ asset('assets/images/pattern/thm-pattern-5.png') }});"></div>
+        <div class="pattern-bg-3" style="background-image: url({{ asset('assets/images/pattern/thm-pattern-5.png') }});"></div>
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
@@ -855,7 +856,7 @@
                             data-wow-duration="1500ms">
                             <div class="img-holder">
                                 <div class="inner">
-                                    <img src="assets/images/resources/working-process-1.jpg" alt="">
+                                    <img src="{{ asset('assets/images/resources/working-process-1.jpg') }}" alt="">
                                     <div class="counting-box">
                                         <div class="count"></div>
                                     </div>
@@ -865,7 +866,7 @@
                                 <h3>Consultation</h3>
                                 <p>Except to obtain some advantage from it but who has any right to find.</p>
                                 <div class="btn-box">
-                                    <a class="btn-two" href="services-details.html">More Details</a>
+                                    <a class="btn-two" href="{{{ route('services') }}}">More Details</a>
                                 </div>
                             </div>
                             <div class="arrow-icon"><i class="fa fa-angle-double-right" aria-hidden="true"></i>
@@ -877,7 +878,7 @@
                             data-wow-duration="1500ms">
                             <div class="img-holder">
                                 <div class="inner">
-                                    <img src="assets/images/resources/working-process-2.jpg" alt="">
+                                    <img src="{{ asset('assets/images/resources/working-process-2.jpg') }}" alt="">
                                     <div class="counting-box">
                                         <div class="count"></div>
                                     </div>
@@ -887,7 +888,7 @@
                                 <h3>Detailed Proposal</h3>
                                 <p>Advantages from it who has any right too man who chooses to enjoy.</p>
                                 <div class="btn-box">
-                                    <a class="btn-two" href="services-details.html">More Details</a>
+                                    <a class="btn-two" href="{{ route('services') }}">More Details</a>
                                 </div>
                             </div>
                             <div class="arrow-icon"><i class="fa fa-angle-double-right" aria-hidden="true"></i>
@@ -899,7 +900,7 @@
                             data-wow-duration="1500ms">
                             <div class="img-holder">
                                 <div class="inner">
-                                    <img src="assets/images/resources/working-process-3.jpg" alt="">
+                                    <img src="{{ asset('assets/images/resources/working-process-3.jpg') }}" alt="">
                                     <div class="counting-box">
                                         <div class="count"></div>
                                     </div>
@@ -909,7 +910,7 @@
                                 <h3>Project Installation</h3>
                                 <p>Obtains some advantage from it’s who has any right to find fault with.</p>
                                 <div class="btn-box">
-                                    <a class="btn-two" href="services-details.html">More Details</a>
+                                    <a class="btn-two" href="{{ route('services') }}">More Details</a>
                                 </div>
                             </div>
                         </li>
@@ -924,7 +925,7 @@
 
     <!--Start Team Style1 Area-->
     <section class="team-style1-area">
-        <div class="pattern-bg" style="background-image: url(assets/images/pattern/thm-pattern-4.png);"></div>
+        <div class="pattern-bg" style="background-image: url({{ asset('assets/images/pattern/thm-pattern-4.png') }});"></div>
         <div class="container">
             <div class="sec-title">
                 <div class="sub-title">
@@ -940,12 +941,12 @@
                              data-wow-duration="1500ms">
                             <div class="img-holder">
                                 <div class="inner">
-                                    <img src="assets/images/team/team-v1-1.jpg" alt=""/>
+                                    <img src="{{ asset('assets/images/team/team-v1-1.jpg') }}" alt=""/>
                                     <div class="overlay-bg"></div>
                                 </div>
                             </div>
                             <div class="title-holder">
-                                <h3><a href="team-single.html">Max Benjamin</a></h3>
+                                <h3><a href="#">Max Benjamin</a></h3>
                                 <p>Founder</p>
                                 <div class="social-link-box">
                                     <ul class="team-social-link">
@@ -968,12 +969,12 @@
                              data-wow-duration="1500ms">
                             <div class="img-holder">
                                 <div class="inner">
-                                    <img src="assets/images/team/team-v1-2.jpg" alt=""/>
+                                    <img src="{{ asset('assets/images/team/team-v1-2.jpg') }}" alt=""/>
                                     <div class="overlay-bg"></div>
                                 </div>
                             </div>
                             <div class="title-holder">
-                                <h3><a href="team-single.html">Harley Reuban</a></h3>
+                                <h3><a href="#">Harley Reuban</a></h3>
                                 <p>Manager</p>
                                 <div class="social-link-box">
                                     <ul class="team-social-link">
@@ -996,12 +997,12 @@
                              data-wow-duration="1500ms">
                             <div class="img-holder">
                                 <div class="inner">
-                                    <img src="assets/images/team/team-v1-3.jpg" alt=""/>
+                                    <img src="{{ asset('assets/images/team/team-v1-3.jpg') }}" alt=""/>
                                     <div class="overlay-bg"></div>
                                 </div>
                             </div>
                             <div class="title-holder">
-                                <h3><a href="team-single.html">Luke Stanley</a></h3>
+                                <h3><a href="#">Luke Stanley</a></h3>
                                 <p>Executive</p>
                                 <div class="social-link-box">
                                     <ul class="team-social-link">
@@ -1024,12 +1025,12 @@
                              data-wow-duration="1500ms">
                             <div class="img-holder">
                                 <div class="inner">
-                                    <img src="assets/images/team/team-v1-4.jpg" alt=""/>
+                                    <img src="{{ asset('assets/images/team/team-v1-4.jpg') }}" alt=""/>
                                     <div class="overlay-bg"></div>
                                 </div>
                             </div>
                             <div class="title-holder">
-                                <h3><a href="team-single.html">Ariana Melody</a></h3>
+                                <h3><a href="#">Ariana Melody</a></h3>
                                 <p>Executive</p>
                                 <div class="social-link-box">
                                     <ul class="team-social-link">
@@ -1078,13 +1079,13 @@
                             <div class="single-testimonials-style1">
                                 <div class="img-holder">
                                     <div class="top-pattern-bg"
-                                         style="background-image: url(assets/images/pattern/thm-pattern-4.png);">
+                                         style="background-image: url({{ asset('assets/images/pattern/thm-pattern-4.png') }});">
                                     </div>
                                     <div class="bottom-pattern-bg"
-                                         style="background-image: url(assets/images/pattern/thm-pattern-5.png);">
+                                         style="background-image: url({{ asset('assets/images/pattern/thm-pattern-5.png') }});">
                                     </div>
                                     <div class="img-box">
-                                        <img src="assets/images/testimonial/testimonial-v1-1.jpg" alt=""/>
+                                        <img src="{{ asset('assets/images/testimonial/testimonial-v1-1.jpg') }}" alt=""/>
                                     </div>
                                     <div class="review-box">
                                         <ul>
@@ -1118,13 +1119,13 @@
                             <div class="single-testimonials-style1">
                                 <div class="img-holder">
                                     <div class="top-pattern-bg"
-                                         style="background-image: url(assets/images/pattern/thm-pattern-4.png);">
+                                         style="background-image: url({{ asset('assets/images/pattern/thm-pattern-4.png') }});">
                                     </div>
                                     <div class="bottom-pattern-bg"
-                                         style="background-image: url(assets/images/pattern/thm-pattern-5.png);">
+                                         style="background-image: url({{ asset('assets/images/pattern/thm-pattern-5.png') }});">
                                     </div>
                                     <div class="img-box">
-                                        <img src="assets/images/testimonial/testimonial-v1-2.jpg" alt=""/>
+                                        <img src="{{ asset('assets/images/testimonial/testimonial-v1-2.jpg') }}" alt=""/>
                                     </div>
                                     <div class="review-box">
                                         <ul>
@@ -1158,13 +1159,13 @@
                             <div class="single-testimonials-style1">
                                 <div class="img-holder">
                                     <div class="top-pattern-bg"
-                                         style="background-image: url(assets/images/pattern/thm-pattern-4.png);">
+                                         style="background-image: url({{ asset('assets/images/pattern/thm-pattern-4.png') }});">
                                     </div>
                                     <div class="bottom-pattern-bg"
-                                         style="background-image: url(assets/images/pattern/thm-pattern-5.png);">
+                                         style="background-image: url({{ asset('assets/images/pattern/thm-pattern-5.png') }});">
                                     </div>
                                     <div class="img-box">
-                                        <img src="assets/images/testimonial/testimonial-v1-1.jpg" alt=""/>
+                                        <img src="{{ asset('assets/images/testimonial/testimonial-v1-1.jpg') }}" alt=""/>
                                     </div>
                                     <div class="review-box">
                                         <ul>
@@ -1198,13 +1199,13 @@
                             <div class="single-testimonials-style1">
                                 <div class="img-holder">
                                     <div class="top-pattern-bg"
-                                         style="background-image: url(assets/images/pattern/thm-pattern-4.png);">
+                                         style="background-image: url({{ asset('assets/images/pattern/thm-pattern-4.png') }});">
                                     </div>
                                     <div class="bottom-pattern-bg"
-                                         style="background-image: url(assets/images/pattern/thm-pattern-5.png);">
+                                         style="background-image: url({{ asset('assets/images/pattern/thm-pattern-5.png') }});">
                                     </div>
                                     <div class="img-box">
-                                        <img src="assets/images/testimonial/testimonial-v1-2.jpg" alt=""/>
+                                        <img src="{{ asset('assets/images/testimonial/testimonial-v1-2.jpg') }}" alt=""/>
                                     </div>
                                     <div class="review-box">
                                         <ul>
@@ -1238,13 +1239,13 @@
                             <div class="single-testimonials-style1">
                                 <div class="img-holder">
                                     <div class="top-pattern-bg"
-                                         style="background-image: url(assets/images/pattern/thm-pattern-4.png);">
+                                         style="background-image: url({{ asset('assets/images/pattern/thm-pattern-4.png') }});">
                                     </div>
                                     <div class="bottom-pattern-bg"
-                                         style="background-image: url(assets/images/pattern/thm-pattern-5.png);">
+                                         style="background-image: url({{ asset('assets/images/pattern/thm-pattern-5.png') }});">
                                     </div>
                                     <div class="img-box">
-                                        <img src="assets/images/testimonial/testimonial-v1-1.jpg" alt=""/>
+                                        <img src="{{ asset('assets/images/testimonial/testimonial-v1-1.jpg') }}" alt=""/>
                                     </div>
                                     <div class="review-box">
                                         <ul>
@@ -1278,13 +1279,13 @@
                             <div class="single-testimonials-style1">
                                 <div class="img-holder">
                                     <div class="top-pattern-bg"
-                                         style="background-image: url(assets/images/pattern/thm-pattern-4.png);">
+                                         style="background-image: url({{ asset('assets/images/pattern/thm-pattern-4.png') }});">
                                     </div>
                                     <div class="bottom-pattern-bg"
-                                         style="background-image: url(assets/images/pattern/thm-pattern-5.png);">
+                                         style="background-image: url({{ asset('assets/images/pattern/thm-pattern-5.png') }});">
                                     </div>
                                     <div class="img-box">
-                                        <img src="assets/images/testimonial/testimonial-v1-2.jpg" alt=""/>
+                                        <img src="{{ asset('assets/images/testimonial/testimonial-v1-2.jpg') }}" alt=""/>
                                     </div>
                                     <div class="review-box">
                                         <ul>
@@ -1326,7 +1327,7 @@
     <!--Start Contact Info Style1 Area-->
     <section class="contact-info-style1-area">
         <div class="contact-info-area__bg"
-             style="background-image: url(assets/images/parallax-background/contact-info-area__bg.jpg);"></div>
+             style="background-image: url({{ asset('assets/images/parallax-background/contact-info-area__bg.jpg') }});"></div>
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
@@ -1338,7 +1339,7 @@
                                         class="border-right"></span></h6>
                             </div>
                         </div>
-                        <h2><a href="tel:123456789">+51 (0) 888 455 369</a></h2>
+                        <h2><a href="tel:123456789">+998 (99) 995 76 65</a></h2>
                         <p>Perfectly simple & easy to distinguish free hour when power of choice is nothing prevents
                             our being.</p>
                         <div class="btn-box wow slideInUp" data-wow-delay="200ms" data-wow-duration="1000ms">
@@ -1364,7 +1365,7 @@
                     <h2>Latest From Blog Post</h2>
                 </div>
                 <div class="blog-style1__button">
-                    <a class="btn-one" href="blog.html">
+                    <a class="btn-one" href="#">
                         <span class="txt">All Post</span>
                     </a>
                 </div>
@@ -1376,7 +1377,7 @@
                     <div class="single-blog-style1 wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
                         <div class="img-holder">
                             <div class="inner">
-                                <img src="assets/images/blog/blog-v1-1.jpg" alt="">
+                                <img src="{{ asset('assets/images/blog/blog-v1-1.jpg') }}" alt="">
                             </div>
                             <div class="categories-date-box">
                                 <div class="categories-box">
@@ -1389,16 +1390,16 @@
                         </div>
                         <div class="text-holder">
                             <h3 class="blog-title">
-                                <a href="blog-single.html">Protecting Your Roof From Storm Damage</a>
+                                <a href="#">Protecting Your Roof From Storm Damage</a>
                             </h3>
                             <div class="text">
                                 <p>Prevents our being able do what we like best every pleasure avoided...</p>
                             </div>
                             <div class="bottom-box">
                                 <div class="pattern-bg"
-                                     style="background-image: url(assets/images/pattern/thm-pattern-7.png);"></div>
+                                     style="background-image: url({{ asset('assets/images/pattern/thm-pattern-7.png') }});"></div>
                                 <div class="left">
-                                    <a class="btn-two" href="blog-single.html">More Details</a>
+                                    <a class="btn-two" href="#">More Details</a>
                                 </div>
                                 <div class="right">
                                     <ul>
@@ -1416,7 +1417,7 @@
                     <div class="single-blog-style1 wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
                         <div class="img-holder">
                             <div class="inner">
-                                <img src="assets/images/blog/blog-v1-2.jpg" alt="">
+                                <img src="{{ asset('assets/images/blog/blog-v1-2.jpg') }}" alt="">
                             </div>
                             <div class="categories-date-box">
                                 <div class="categories-box">
@@ -1429,16 +1430,16 @@
                         </div>
                         <div class="text-holder">
                             <h3 class="blog-title">
-                                <a href="blog-single.html">How To Weather Proof Your Roof This Winter?</a>
+                                <a href="#">How To Weather Proof Your Roof This Winter?</a>
                             </h3>
                             <div class="text">
                                 <p>Mistaken idea denouncing pleasure and praising pain was complete...</p>
                             </div>
                             <div class="bottom-box">
                                 <div class="pattern-bg"
-                                     style="background-image: url(assets/images/pattern/thm-pattern-7.png);"></div>
+                                     style="background-image: url({{ asset('assets/images/pattern/thm-pattern-7.png') }});"></div>
                                 <div class="left">
-                                    <a class="btn-two" href="blog-single.html">More Details</a>
+                                    <a class="btn-two" href="#">More Details</a>
                                 </div>
                                 <div class="right">
                                     <ul>
@@ -1456,7 +1457,7 @@
                     <div class="single-blog-style1 wow fadeInUp" data-wow-delay="500ms" data-wow-duration="1500ms">
                         <div class="img-holder">
                             <div class="inner">
-                                <img src="assets/images/blog/blog-v1-3.jpg" alt="">
+                                <img src="{{ asset('assets/images/blog/blog-v1-3.jpg') }}" alt="">
                             </div>
                             <div class="categories-date-box">
                                 <div class="categories-box">
@@ -1469,16 +1470,16 @@
                         </div>
                         <div class="text-holder">
                             <h3 class="blog-title">
-                                <a href="blog-single.html">The 5 Most Common Causes Of Roof Leaks</a>
+                                <a href="#">The 5 Most Common Causes Of Roof Leaks</a>
                             </h3>
                             <div class="text">
                                 <p>No one rejects dislikes or avoids pleasure itself because it is pleasure...</p>
                             </div>
                             <div class="bottom-box">
                                 <div class="pattern-bg"
-                                     style="background-image: url(assets/images/pattern/thm-pattern-7.png);"></div>
+                                     style="background-image: url({{ asset('assets/images/pattern/thm-pattern-7.png') }});"></div>
                                 <div class="left">
-                                    <a class="btn-two" href="blog-single.html">More Details</a>
+                                    <a class="btn-two" href="#">More Details</a>
                                 </div>
                                 <div class="right">
                                     <ul>
@@ -1509,7 +1510,7 @@
         <div class="popup-inner">
             <div class="overlay-layer"></div>
             <div class="search-form">
-                <form method="post" action="index.html">
+                <form method="post" action="{{ route('index') }}">
                     <div class="form-group">
                         <fieldset>
                             <input type="search" class="form-control" name="search-input" value=""
@@ -1520,11 +1521,11 @@
                 </form>
                 <h3>Recent Search Keywords</h3>
                 <ul class="recent-searches">
-                    <li><a href="index.html">Safety Tips</a></li>
-                    <li><a href="index.html">Filteration</a></li>
-                    <li><a href="index.html">Accessories</a></li>
-                    <li><a href="index.html">Tools</a></li>
-                    <li><a href="index.html">Design</a></li>
+                    <li><a href="{{ route('index') }}">Safety Tips</a></li>
+                    <li><a href="{{ route('index') }}">Filteration</a></li>
+                    <li><a href="{{ route('index') }}">Accessories</a></li>
+                    <li><a href="{{ route('index') }}">Tools</a></li>
+                    <li><a href="{{ route('index') }}">Design</a></li>
                 </ul>
             </div>
         </div>

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app-site')
 @section('content')
     <div class="boxed_wrapper ltr">
 
@@ -14,8 +14,12 @@
 
         <!-- page-direction -->
         <div class="page_direction">
-            <div class="demo-rtl direction_switch"><button class="rtl">RTL</button></div>
-            <div class="demo-ltr direction_switch"><button class="ltr">LTR</button></div>
+            <div class="demo-rtl direction_switch">
+                <button class="rtl">RTL</button>
+            </div>
+            <div class="demo-ltr direction_switch">
+                <button class="ltr">LTR</button>
+            </div>
         </div>
         <!-- page-direction end -->
 
@@ -23,7 +27,7 @@
         <!-- switcher menu -->
         <div class="switcher">
             <div class="switch_btn">
-                <button><img src="assets/images/icon/color-palette.png" alt="Color Palette"> </button>
+                <button><img src="{{ asset('assets/images/icon/color-palette.png') }}" alt="Color Palette"></button>
             </div>
             <div class="switch_menu">
                 <!-- color changer -->
@@ -65,7 +69,7 @@
                         <div class="sidebar-info-contents">
                             <div class="content-inner">
                                 <div class="logo">
-                                    <a href="index.blade.php"><img src="assets/images/resources/logo-2.png" alt="" /></a>
+                                    <a href="{{ route('index') }}"><img src="{{ asset('assets/images/resources/logo-2.png') }}" alt=""/></a>
                                 </div>
 
                                 <div class="content-box">
@@ -80,12 +84,13 @@
 
                                 <div class="form-inner">
                                     <h4>Get a free quote</h4>
-                                    <form action="index.blade.php" method="post">
+                                    <form action="{{ route('contact.send') }}" method="post">
+                                        @csrf
                                         <div class="form-group">
-                                            <input type="text" name="name" placeholder="Name" required="">
+                                            <input type="text" name="name" placeholder="Name" required="required">
                                         </div>
                                         <div class="form-group">
-                                            <input type="email" name="email" placeholder="Email" required="">
+                                            <input type="email" name="email" placeholder="Email" required="required">
                                         </div>
                                         <div class="form-group">
                                             <textarea name="message" placeholder="Message..."></textarea>
@@ -106,7 +111,7 @@
                                         </li>
                                         <li>
                                             <span class="flaticon-telephone"></span>
-                                            <a href="tel:+8801682648101">+88 01682648101</a>
+                                            <a href="tel:+998999957665">+998 995 76 65</a>
                                         </li>
                                         <li>
                                             <span class="flaticon-mail"></span>
@@ -141,7 +146,7 @@
 
         <!--Start breadcrumb area paroller-->
         <section class="breadcrumb-area">
-            <div class="breadcrumb-area-bg" style="background-image: url(assets/images/breadcrumb/breadcrumb-1.jpg);">
+            <div class="breadcrumb-area-bg" style="background-image: url({{ asset('assets/images/breadcrumb/breadcrumb-1.jpg') }});">
             </div>
             <div class="container">
                 <div class="row">
@@ -151,7 +156,7 @@
                                 <h2>Get In Touch</h2>
                             </div>
                             <div class="breadcrumb-menu" data-aos="fade-up" data-aos-easing="linear"
-                                data-aos-duration="1500">
+                                 data-aos-duration="1500">
                                 <ul>
                                     <li><a href="index.blade.php">Home</a></li>
                                     <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
@@ -177,7 +182,7 @@
                             </div>
                             <div class="text-holder">
                                 <div class="pattern-bg"
-                                    style="background-image: url(assets/images/pattern/thm-pattern-3.png);"></div>
+                                     style="background-image: url({{ asset('assets/images/pattern/thm-pattern-3.png') }});"></div>
                                 <div class="top">
                                     <h3>Visit a Office</h3>
                                     <span>You are most welcome to visit office.</span>
@@ -196,7 +201,7 @@
                             </div>
                             <div class="text-holder">
                                 <div class="pattern-bg"
-                                    style="background-image: url(assets/images/pattern/thm-pattern-3.png);"></div>
+                                     style="background-image: url({{ asset('assets/images/pattern/thm-pattern-3.png') }});"></div>
                                 <div class="top">
                                     <h3>Make a Call</h3>
                                     <span>Keeping you always better connected.</span>
@@ -218,14 +223,14 @@
                             </div>
                             <div class="text-holder">
                                 <div class="pattern-bg"
-                                    style="background-image: url(assets/images/pattern/thm-pattern-3.png);"></div>
+                                     style="background-image: url({{ asset('assets/images/pattern/thm-pattern-3.png') }});"></div>
                                 <div class="top">
                                     <h3>Send Email</h3>
                                     <span>Drop us a mail we will answer you asap.</span>
                                 </div>
                                 <p class="text1">
-                                    Sales: <a href="mailto:yourmail@email.com">support@mailus.com</a> <br>
-                                    Service: <a href="mailto:yourmail@email.com">sendmail@ruferssales.com</a>
+                                    Sales: <a href="https://yourmail@email.com">support@mailus.com</a> <br>
+                                    Service: <a href="https://yourmail@email.com">sendmail@ruferssales.com</a>
                                 </p>
                             </div>
                         </div>
@@ -247,9 +252,9 @@
                         <div class="contact-page-map-outer">
                             <!--Map Canvas-->
                             <div class="map-canvas" data-zoom="12" data-lat="-37.817085" data-lng="144.955631"
-                                data-type="roadmap" data-hue="#ffc400" data-title="Envato"
-                                data-icon-path="assets/images/icon/map-marker.png"
-                                data-content="Melbourne VIC 3000, Australia<br><a href='mailto:info@youremail.com'>info@youremail.com</a>">
+                                 data-type="roadmap" data-hue="#ffc400" data-title="Envato"
+                                 data-icon-path="assets/images/icon/map-marker.png"
+                                 data-content="Melbourne VIC 3000, Australia<br><a href='info@gmail.com'>info@youremail.com</a>">
                             </div>
                         </div>
                     </div>
@@ -262,31 +267,32 @@
                                     to hear for you.</p>
                             </div>
                             <div class="contact-form">
-                                <form id="contact-form" name="contact_form" class="default-form2"
-                                    action="assets/inc/sendmail.php" method="post">
+                                <form name="form" class="default-form2"
+                                      action="{{ route('contact.send') }}" method="post">
+                                    @csrf
                                     <div class="row">
                                         <div class="col-xl-6 col-lg-6">
                                             <div class="input-box">
-                                                <input type="text" name="form_name" value="" placeholder="Full Name :"
-                                                    required="">
+                                                <input type="text" name="name" value="" placeholder="Full Name :"
+                                                       required="required">
                                             </div>
                                         </div>
                                         <div class="col-xl-6 col-lg-6">
                                             <div class="input-box">
-                                                <input type="email" name="form_email" value="" placeholder="Email :"
-                                                    required="">
+                                                <input type="email" name="email" value="" placeholder="Email :"
+                                                       required="required">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-xl-6 col-lg-6">
                                             <div class="input-box">
-                                                <input type="text" name="form_phone" value="" placeholder="Phone :">
+                                                <input type="text" name="phone" value="" placeholder="Phone :">
                                             </div>
                                         </div>
                                         <div class="col-xl-6 col-lg-6">
                                             <div class="input-box">
-                                                <input type="text" name="form_subject" value="" placeholder="Subject :">
+                                                <input type="text" name="subject" value="" placeholder="Subject :">
                                             </div>
                                         </div>
                                     </div>
@@ -294,7 +300,7 @@
                                         <div class="col-xl-12 text-center">
                                             <div class="input-box">
                                                 <div class="select-box">
-                                                    <select class="wide">
+                                                    <select name="select" class="wide">
                                                         <option data-display="Service">Service</option>
                                                         <option value="1">Single Ply Roofing</option>
                                                         <option value="2">Modified Roofing</option>
@@ -307,14 +313,14 @@
                                     <div class="row">
                                         <div class="col-xl-12 text-center">
                                             <div class="input-box two">
-                                                <textarea name="form_message" placeholder="Enter your message..."
-                                                    required=""></textarea>
+                                                <textarea name="message" placeholder="Enter your message..."
+                                                          required="required"></textarea>
                                             </div>
                                             <div class="button-box">
                                                 <input id="form_botcheck" name="form_botcheck" class="form-control"
-                                                    type="hidden" value="">
+                                                       type="hidden" value="">
                                                 <button class="btn-one" type="submit"
-                                                    data-loading-text="Please wait...">
+                                                        data-loading-text="Please wait...">
                                                     <span class="txt">Send Message</span>
                                                 </button>
                                             </div>
@@ -336,29 +342,28 @@
         </button>
 
 
-
         <!-- search-popup -->
         <div id="search-popup" class="search-popup">
             <div class="close-search"><i class="icon-close"></i></div>
             <div class="popup-inner">
                 <div class="overlay-layer"></div>
                 <div class="search-form">
-                    <form method="post" action="index.blade.php">
+                    <form method="post" action="{{ route('index') }}">
                         <div class="form-group">
                             <fieldset>
                                 <input type="search" class="form-control" name="search-input" value=""
-                                    placeholder="Search Here" required>
+                                       placeholder="Search Here" required>
                                 <input type="submit" value="Search Now!" class="theme-btn style-four">
                             </fieldset>
                         </div>
                     </form>
                     <h3>Recent Search Keywords</h3>
                     <ul class="recent-searches">
-                        <li><a href="index.blade.php">Safety Tips</a></li>
-                        <li><a href="index.blade.php">Filteration</a></li>
-                        <li><a href="index.blade.php">Accessories</a></li>
-                        <li><a href="index.blade.php">Tools</a></li>
-                        <li><a href="index.blade.php">Design</a></li>
+                        <li><a href="{{ route('index') }}">Safety Tips</a></li>
+                        <li><a href="{{ route('index') }}">Filteration</a></li>
+                        <li><a href="{{ route('index') }}">Accessories</a></li>
+                        <li><a href="{{ route('index') }}">Tools</a></li>
+                        <li><a href="{{ route('index') }}">Design</a></li>
                     </ul>
                 </div>
             </div>

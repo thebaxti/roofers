@@ -1,4 +1,4 @@
-
+@foreach($settings as $setting)
 <!--Start footer area -->
 <footer class="footer-area">
 
@@ -9,7 +9,7 @@
                     <div class="footer-top__content">
                         <div class="left-box">
                             <div class="footer-logo">
-                                <a href="index.html"><img src="assets/images/footer/footer-logo.png" alt=""></a>
+                                <a href="{{ route('index') }}"><img src="{{ asset('assets/images/footer/footer-logo.png') }}" alt=""></a>
                             </div>
                             <div class="title">
                                 <h3>Do You Have An Emergency?</h3>
@@ -17,10 +17,10 @@
                             </div>
                         </div>
                         <div class="right-box">
-                            <a class="btn-one one" href="about.html"><span class="txt">More
+                            <a class="btn-one one" href="{{ route('about') }}"><span class="txt">More
                                             Details</span></a>
-                            <a class="btn-one two" href="tel:123456789"><span
-                                    class="flaticon-headphone"></span><span class="txt">+1800-12-3456</span></a>
+                            <a class="btn-one two" href="tel:+{{ $setting->phone_2 }}"><span
+                                    class="flaticon-headphone"></span><span class="txt">{{ $setting->phone_2 }}</span></a>
                         </div>
                     </div>
                 </div>
@@ -52,7 +52,7 @@
                                 </li>
                             </ul>
                             <div class="btn-box">
-                                <a class="btn-one" href="about.html">
+                                <a class="btn-one" href="{{ route('about') }}">
                                     <span class="txt">More Details</span>
                                 </a>
                             </div>
@@ -70,15 +70,15 @@
                         </div>
                         <div class="footer-widget-links">
                             <ul class="pull-left left">
-                                <li><a href="services.html">Services</a></li>
-                                <li><a href="projects.html">Projects</a></li>
-                                <li><a href="testimonials.html">Testimonials</a></li>
+                                <li><a href="{{ route('services') }}">Services</a></li>
+                                <li><a href="#">Projects</a></li>
+                                <li><a href="#">Testimonials</a></li>
                                 <li><a href="#">Updates</a></li>
                                 <li><a href="#">Offers</a></li>
                                 <li><a href="#">Estimation</a></li>
                             </ul>
                             <ul class="pull-left marleft-60">
-                                <li><a href="faq.html">FAQ’s</a></li>
+                                <li><a href="#">FAQ’s</a></li>
                                 <li><a href="#">Partners</a></li>
                                 <li><a href="#">Local Offices</a></li>
                                 <li><a href="#">Guarantee</a></li>
@@ -99,19 +99,19 @@
                             <ul>
                                 <li>
                                     <h6>General Quries</h6>
-                                    <p>Phone: <a href="tel:123456789">+1 555-7890-123</a></p>
-                                    <p>Email: <a href="mailto:yourmail@email.com">example@rufers.com</a></p>
+                                    <p>Phone: <a href="tel:{{ $setting->phone_2 }}">{{ $setting->phone_2 }}</a></p>
+                                    <p>Email: <a href="mailto:{{ $setting->email }}">{{ $setting->email }}</a></p>
                                 </li>
                                 <li>
                                     <h6>Office Location</h6>
-                                    <p>Boat House, 152/21 City Road<br> Hoxton N1 6NG, UK.</p>
+                                    <p>{{ $setting->{'address_' . $locale} }}</p>
                                 </li>
                             </ul>
                             <div class="footer-social-link">
                                 <ul class="clearfix">
-                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="https://facebook.com/{{ $setting->facebook }}" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="https://twitter.com/{{ $setting->twitter }}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                    <li><a href="https://instagram.com/{{ $setting->instagram }}" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                                 </ul>
                             </div>
 
@@ -130,7 +130,7 @@
                             <li>
                                 <div class="inner">
                                     <div class="img-box">
-                                        <img src="assets/images/footer/footer-widget-post-1.jpg"
+                                        <img src="{{ asset('assets/images/footer/footer-widget-post-1.jpg') }}"
                                              alt="Awesome Image">
                                         <div class="overlay-content">
                                             <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
@@ -145,7 +145,7 @@
                             <li>
                                 <div class="inner">
                                     <div class="img-box">
-                                        <img src="assets/images/footer/footer-widget-post-2.jpg"
+                                        <img src="{{ asset('assets/images/footer/footer-widget-post-2.jpg') }}"
                                              alt="Awesome Image">
                                         <div class="overlay-content">
                                             <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
@@ -160,7 +160,7 @@
                         </ul>
 
                         <div class="widget-more-post-button">
-                            <a class="btn-two" href="projects.html">More Details</a>
+                            <a class="btn-two" href="#">More Details</a>
                         </div>
 
 
@@ -177,7 +177,7 @@
         <div class="container">
             <div class="bottom-inner">
                 <div class="copyright">
-                    <p>Copyright &copy; 2021<a href="index.html"> Rufers.</a> All Rights Reserved.</p>
+                    <p>Copyright &copy; 2021<a href="{{ route('index') }}"> Rufers.</a> All Rights Reserved.</p>
                 </div>
                 <div class="footer-menu">
                     <ul class="footer-nav">
@@ -193,3 +193,4 @@
 </footer>
 <!--End footer area-->
 
+@endforeach

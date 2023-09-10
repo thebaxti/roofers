@@ -1,9 +1,9 @@
-
+@foreach($settings as $setting)
 <!-- Main header-->
 <header class="main-header header-style-one">
     <div class="header-style-one__inner">
         <div class="main-logo-box">
-            <a href="index.html"><img src="assets/images/resources/logo.png" alt="Awesome Logo" title=""></a>
+            <a href="{{ route('index') }}"><img src="{{ asset('assets/images/resources/logo.png') }}" alt="Awesome Logo" title=""></a>
         </div>
         <!--Start Header Top-->
         <div class="header-style-one__header-content">
@@ -24,8 +24,9 @@
                                         <div class="icon">
                                             <span class="flaticon-phone-call-3"></span>
                                         </div>
+
                                         <div class="text">
-                                            <h6><a href="tel:123456789">+233 456 789 01</a></h6>
+                                            <h6><a href="tel:{{ $setting->phone_1 }}">{{ $setting->phone_1 }}</a></h6>
                                         </div>
                                     </li>
                                     <li>
@@ -33,7 +34,7 @@
                                             <span class="flaticon-email-1"></span>
                                         </div>
                                         <div class="text">
-                                            <h6><a href="mailto:yourmail@email.com">support@mailus.com</a></h6>
+                                            <h6><a href="mailto:{{ $setting->email }}">{{ $setting->email }}</a></h6>
                                         </div>
                                     </li>
                                 </ul>
@@ -45,13 +46,13 @@
                                 <div class="social-link">
                                     <ul class="clearfix">
                                         <li>
-                                            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                            <a href="https://facebook.com/{{ $setting->facebook }}" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                                         </li>
                                         <li>
-                                            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                            <a href="https://twitter.com/{{ $setting->twitter }}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                                         </li>
                                         <li>
-                                            <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                            <a href="https://instagram.com/{{ $setting->instagram }}" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -83,10 +84,23 @@
                                     <div class="collapse navbar-collapse show clearfix"
                                          id="navbarSupportedContent">
                                         <ul class="navigation clearfix">
-                                            <li><a href="{{ url('/') }}">Home</a></li>
-                                            <li><a href="{{ url('/about') }}">About</a></li>
-                                            <li><a href="{{ url('/contact') }}">Contact</a></li>
-                                            <li><a href="{{ url('/services') }}">Services</a></li>
+                                            <li><a href="{{ route('index') }}">@lang('main.main')</a></li>
+                                            <li><a href="{{ route('about') }}">@lang('main.about')</a></li>
+                                            <li><a href="{{ route('services') }}">@lang('main.service')</a>
+                                            <li><a href="{{ route('contact') }}">@lang('main.contact')</a></li>
+                                            <li class="dropdown">
+                                                <a href="#">{{ LaravelLocalization::getCurrentLocaleNative() }}</a>
+                                                <ul>
+                                                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                                                        <li>
+                                                            <a rel="alternate" hreflang="{{ $localeCode }}"
+                                                               href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                                                {{ $properties['native'] }}
+                                                            </a>
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                            </li>
                                         </ul>
                                     </div>
                                 </nav>
@@ -95,19 +109,10 @@
                         </div>
 
                         <div class="header-right">
-                            <div class="shopping-cart-box">
-                                <a href="shop.html"><i class="flaticon-shopping-bag"></i><span
-                                        class="count">3</span></a>
-                            </div>
-                            <div class="space-box1"></div>
-                            <div class="serach-button-style2">
-                                <input type="search" class="form-control" name="search-input" value=""
-                                       placeholder="Search..." required>
-                                <button type="button"><i class="icon-search"></i></button>
-                            </div>
+
                             <div class="header-right_buttom">
                                 <div class="btns-box">
-                                    <a class="btn-one" href="contact.html">
+                                    <a class="btn-one" href="{{ route('contact') }}">
                                         <i class="fa fa-angle-right" aria-hidden="true"></i>
                                         <span class="txt">Get A Quote</span>
                                     </a>
@@ -132,8 +137,8 @@
             <div class="clearfix">
                 <!--Logo-->
                 <div class="logo float-left">
-                    <a href="index.html" class="img-responsive"><img
-                            src="assets/images/resources/sticky-logo.png" alt="" title=""></a>
+                    <a href="{{ route('index') }}" class="img-responsive"><img
+                            src="{{ asset('assets/images/resources/sticky-logo.png') }}" alt="" title=""></a>
                 </div>
                 <!--Right Col-->
                 <div class="right-col float-right">
@@ -152,7 +157,7 @@
         <div class="menu-backdrop"></div>
         <div class="close-btn"><span class="icon fa fa-times-circle"></span></div>
         <nav class="menu-box">
-            <div class="nav-logo"><a href="index.html"><img src="assets/images/resources/mobilemenu-logo.png"
+            <div class="nav-logo"><a href="{{ route('index') }}"><img src="{{ asset('assets/images/resources/mobilemenu-logo.png') }}"
                                                             alt="" title=""></a></div>
             <div class="menu-outer">
                 <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
@@ -172,3 +177,4 @@
     <!-- End Mobile Menu -->
 </header>
 
+@endforeach
